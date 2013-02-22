@@ -27,7 +27,6 @@ class V1::SmellsController < ApplicationController
     if smell.save
       render json: smell.to_json
     else
-      logger.debug smell.inspect
       render json: Smell.new
     end
   end
