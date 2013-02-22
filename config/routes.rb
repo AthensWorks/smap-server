@@ -1,4 +1,8 @@
 Smap::Application.routes.draw do
+  
+  namespace :v1 do
+    get "reactions/index"    
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(:version => 20130222005454) do
     t.float    "lat"
     t.float    "long"
     t.string   "name"
-    t.integer  "up_votes"
-    t.integer  "down_votes"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "up_votes",   :default => 0
+    t.integer  "down_votes", :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
 end
