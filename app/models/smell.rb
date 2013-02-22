@@ -1,9 +1,9 @@
 class Smell < ActiveRecord::Base
-  attr_accessible :down_votes, :lat, :long, :name, :up_votes
+  attr_accessible :down_votes, :lat, :lon, :name, :up_votes
   
   has_and_belongs_to_many :reactions
   
-  validates_presence_of :name,  :lat, :long, :up_votes, :down_votes
+  validates_presence_of :name,  :lat, :lon, :up_votes, :down_votes
   
-  geocoded_by :address, :latitude  => :lat, :longitude => :long
+  geocoded_by :address, :latitude  => :lat, :longitude => :lon
 end

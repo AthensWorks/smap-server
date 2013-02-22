@@ -8,8 +8,8 @@ class V1::SmellsController < ApplicationController
       smells = smells.where(Smell.arel_table[:name].matches("%#{params[:s]}%"))
     end
     
-    if params[:lat] && params[:long]
-      smells = smells.near([params[:lat],params[:long]], params[:dist] || 5)
+    if params[:lat] && params[:lon]
+      smells = smells.near([params[:lat],params[:lon]], params[:dist] || 5)
     end
 
     render json: smells.to_json
@@ -26,7 +26,7 @@ class V1::SmellsController < ApplicationController
   end
 
   def create
-    smell = Smell.new(name: params[:name], lat: params[:lat], long: params[:long])
+    smell = Smell.new(name: params[:name], lat: params[:lat], lon: params[:lon])
     
     if smell.save
       render json: smell.to_json

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222005454) do
+ActiveRecord::Schema.define(:version => 20130222035855) do
 
   create_table "reactions", :force => true do |t|
     t.string   "name"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20130222005454) do
 
   create_table "smells", :force => true do |t|
     t.float    "lat"
-    t.float    "long"
+    t.float    "lon"
     t.string   "name"
     t.integer  "up_votes",   :default => 0
     t.integer  "down_votes", :default => 0
