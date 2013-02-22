@@ -4,4 +4,6 @@ class Smell < ActiveRecord::Base
   has_and_belongs_to_many :reactions
   
   validates_presence_of :name,  :lat, :long, :up_votes, :down_votes
+  
+  geocoded_by :address, :latitude  => :lat, :longitude => :long
 end

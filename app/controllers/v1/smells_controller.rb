@@ -7,6 +7,10 @@ class V1::SmellsController < ApplicationController
     if params[:s]
       smells = smells.where(Smell.arel_table[:name].matches("%#{params[:s]}%"))
     end
+    
+    if params[:lat] && params[:long]
+      smells = smells.near([params[:lat],params[:long]], params[:dist] || 5)
+    end
 
     render json: smells.to_json
   end
