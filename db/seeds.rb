@@ -1,7 +1,39 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#Populate all the standard reactions
+Reaction.create name: "sweet"
+Reaction.create name: "acrid"
+Reaction.create name: "crisp"
+Reaction.create name: "warm"
+Reaction.create name: "sharp"
+Reaction.create name: "sour"
+Reaction.create name: "intrusive"
+Reaction.create name: "subtle"
+Reaction.create name: "rough"
+Reaction.create name: "wet"
+Reaction.create name: "natural"
+Reaction.create name: "putrid"
+Reaction.create name: "stale"
+Reaction.create name: "full"
+Reaction.create name: "complex"
+Reaction.create name: "fresh"
+Reaction.create name: "repulsive"
+Reaction.create name: "bright"
+Reaction.create name: "heavy"
+Reaction.create name: "delicate"
+Reaction.create name: "floral"
+Reaction.create name: "transcendent"
+Reaction.create name: "homey"
+Reaction.create name: "old"
+Reaction.create name: "new"
+Reaction.create name: "boozy"
+Reaction.create name: "greasy"
+Reaction.create name: "spicy"
+Reaction.create name: "watering"
+Reaction.create name: "salty"
+Reaction.create name: "refreshing"
+Reaction.create name: "earthy"
+Reaction.create name: "smoky"
+Reaction.create name: "sweaty"
+Reaction.create name: "inviting"
+Reaction.create name: "manly"
+Reaction.create name: "feminine"
+Reaction.create name: "roasted"
