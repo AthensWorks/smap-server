@@ -2,7 +2,12 @@ class V1::SmellsController < ApplicationController
   respond_to :json
   
   def index
-    smells = Smell.all
+    smells = Smell.scoped
+        
+    if params[:s]
+      smells = smells.where(Smell.arel_table[:name].matches("%#{params[:s]}%"))
+    end
+
     render json: smells.to_json
   end
 
