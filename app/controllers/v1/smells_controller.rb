@@ -34,4 +34,38 @@ class V1::SmellsController < ApplicationController
       render json: Smell.new
     end
   end
+  
+  # Special routes for POST on a smell to incremiment either up_votes or down_votes
+  
+  def up
+    smell = Smell.where(id: params[:smell_id]).first
+    
+    if smell
+      smell.up_votes += 1
+      
+      if smell.save
+        render json: smell.to_json(:methods => :reaction_ids)
+      else
+        render json: Smell.new
+      end
+    else
+      render json: Smell.new
+    end
+  end
+  
+  def down
+    smell = Smell.where(id: params[:smell_id]).first
+    
+    if smell
+      smell.down_votes += 1
+      
+      if smell.save
+        render json: smell.to_json(:methods => :reaction_ids)
+      else
+        render json: Smell.new
+      end
+    else
+      render json: Smell.new
+    end
+  end
 end
