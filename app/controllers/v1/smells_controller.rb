@@ -11,6 +11,10 @@ class V1::SmellsController < ApplicationController
     if params[:lat] && params[:lon]
       smells = smells.near([params[:lat],params[:lon]], params[:dist] || 5)
     end
+    
+    #Pagination
+    params[:per_page] = 30 unless params[:per_page].is_a?(Numeric) && params[:per_page] <= 100 #per_page must be less than 100; default to 30
+    smells = smells.page(params[:page] || 1).per(params[:per_page])
 
     render json: smells.to_json(:methods => :reaction_ids)
   end
